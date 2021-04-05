@@ -40,6 +40,11 @@ Each time you open a new terminal session, run:
 export FLASK_APP=api.py;
 ```
 
+>Alternatively in Windows PS:
+>```bash
+>$env:FLASK_APP="api"
+>```
+
 To run the server, execute:
 
 ```bash
@@ -47,6 +52,11 @@ flask run --reload
 ```
 
 The `--reload` flag will detect file changes and restart the server automatically.
+
+>Alternatively in Windows PS:
+>```bash
+>$env:FLASK_ENV="development"
+>```
 
 ## Tasks
 
@@ -71,7 +81,7 @@ The `--reload` flag will detect file changes and restart the server automaticall
         - can perform all actions
 7. Test your endpoints with [Postman](https://getpostman.com). 
     - Register 2 users - assign the Barista role to one and Manager role to the other.
-    - Sign into each account and make note of the JWT.
+    - Sign into each account and make note of the JWT. To sign up follow https://<DOMAIN>/authorize?audience=<API>&response_type=token&client_id=<CLIENT:ID>&redirect_uri=https://localhost:8080/login-results&state=STATE
     - Import the postman collection `./starter_code/backend/udacity-fsnd-udaspicelatte.postman_collection.json`
     - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
     - Run the collection and correct any errors.
